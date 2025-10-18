@@ -32,6 +32,13 @@
         MODERATOR, 
         DEVELOPER
     };
+
+    enum pstate : int
+    {
+        S_GHOST = 1,
+        S_DOUBLE_JUMP = 2,
+        S_DUCT_TAPE = 8192
+    };
     
     #include <deque>
     #include <array>
@@ -54,8 +61,7 @@
 
         unsigned skin_color{ 2527912447 };
 
-        bool ghost{};
-        bool double_jump{};
+        int state{}; // @note using pstate::
 
         Billboard billboard{};
 
